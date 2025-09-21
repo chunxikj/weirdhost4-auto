@@ -106,8 +106,8 @@ def add_server_time(server_url="https://hub.weirdhost.xyz/server/3ff959d6"):
                     browser.close()
                     return False
 
-            # --- 核心操作：查找并点击 "시간 추가" 按钮 ---
-            add_button_selector = 'button:has-text("시간 추가")' # 已更新为新的按钮文本
+            # --- 核心操作：查找并点击 "시간추가" 按钮 ---
+            add_button_selector = 'button:has-text("시간추가")' # 已更新为新的按钮文本
             print(f"正在查找并等待 '{add_button_selector}' 按钮...")
 
             try:
@@ -115,7 +115,7 @@ def add_server_time(server_url="https://hub.weirdhost.xyz/server/3ff959d6"):
                 add_button = page.locator(add_button_selector)
                 add_button.wait_for(state='visible', timeout=30000)
                 add_button.click()
-                print("成功点击 '시간 추가' 按钮。")
+                print("成功点击 '시간추가' 按钮。")
                 time.sleep(5) # 等待5秒，确保操作在服务器端生效
                 print("任务完成。")
                 browser.close()
